@@ -1,0 +1,117 @@
+{
+	"info": {
+		"_postman_id": "bec25a2a-3c7c-4940-b3dd-1d285b2ade60",
+		"name": "Secondhand.Binar_Profiles",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29805191"
+	},
+	"item": [
+		{
+			"name": "Update Profile",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 1000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3NTQzNiIsInNjcCI6InVzZXIiLCJhdWQiOm51bGwsImlhdCI6MTY5NTY0MTc5MywiZXhwIjoxNjk2ODUxMzkzLCJqdGkiOiJhOGYwMmFhNS1mMzIwLTRjZDktOTZiNy1hZTJkMGFiODRkNDIifQ.PNOxfNJfVHWk80HNBl8QTsLPLJyT_WTxWuYVyVESWOY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user\" : {\r\n        \"name\" : \"Abdul_jualdanbeli V.2\",\r\n        \"phone_number\" : \"+628122758669\",\r\n        \"addres\" : \"jalan terus pantang mundur\",\r\n        \"city id\" : 5\r\n            }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shw.url}}/profiles.json",
+					"host": [
+						"{{shw.url}}"
+					],
+					"path": [
+						"profiles.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Profile",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 1000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3NTQzNiIsInNjcCI6InVzZXIiLCJhdWQiOm51bGwsImlhdCI6MTY5NTY0MTc5MywiZXhwIjoxNjk2ODUxMzkzLCJqdGkiOiJhOGYwMmFhNS1mMzIwLTRjZDktOTZiNy1hZTJkMGFiODRkNDIifQ.PNOxfNJfVHWk80HNBl8QTsLPLJyT_WTxWuYVyVESWOY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shw.url}}/profiles.json",
+					"host": [
+						"{{shw.url}}"
+					],
+					"path": [
+						"profiles.json"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

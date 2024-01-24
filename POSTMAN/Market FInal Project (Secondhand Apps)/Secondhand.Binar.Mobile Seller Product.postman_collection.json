@@ -1,0 +1,251 @@
+{
+	"info": {
+		"_postman_id": "7f358ad0-3fee-469f-8793-a7d4e3fbedce",
+		"name": "Secondhand.Binar.Mobile Seller Product",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29805191"
+	},
+	"item": [
+		{
+			"name": "Seller Product",
+			"item": [
+				{
+					"name": "Register",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 1000ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "access_token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiZHVsYnV5ZXIyMUBnbWFpbC5jb20iLCJpYXQiOjE2OTYyMDgzMjV9.PW8cdSC4pIhhJXFPdCOVXvPI9sBgybspCEyi659wz4I",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "JAWA adalah koentji",
+									"contentType": "multipart/form-data",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "kunci menang pki",
+									"contentType": "multipart/form-data",
+									"type": "text"
+								},
+								{
+									"key": "base_price",
+									"value": "2000000",
+									"contentType": "multipart/form-data",
+									"type": "text"
+								},
+								{
+									"key": "category_ids",
+									"value": "4,5",
+									"contentType": "multipart/form-data",
+									"type": "text"
+								},
+								{
+									"key": "location",
+									"value": "jakarta",
+									"contentType": "multipart/form-data",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"contentType": "image/jpeg",
+									"type": "file",
+									"src": "istockphoto-953632528-1024x1024.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{mpf.url}}/seller/product",
+							"host": [
+								"{{mpf.url}}"
+							],
+							"path": [
+								"seller",
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Product",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 1000ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "access_token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiZHVsYXppemRlbWFpdHpAZ21haWwuY29tIiwiaWF0IjoxNjk1ODI2MjUwfQ.1cJAqddB_DNduZvd-2iZJptOR-Ka3GkATrKiSqes32U",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{mpf.url}}/seller/product",
+							"host": [
+								"{{mpf.url}}"
+							],
+							"path": [
+								"seller",
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Product",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 1000ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "access_token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiZHVsYXppemRlbWFpdHpAZ21haWwuY29tIiwiaWF0IjoxNjk1ODI2MjUwfQ.1cJAqddB_DNduZvd-2iZJptOR-Ka3GkATrKiSqes32U",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{mpf.url}}/seller/product/91965",
+							"host": [
+								"{{mpf.url}}"
+							],
+							"path": [
+								"seller",
+								"product",
+								"91965"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 1000ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "access_token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiZHVsYnV5ZXIyMUBnbWFpbC5jb20iLCJpYXQiOjE2OTYyMDgzMjV9.PW8cdSC4pIhhJXFPdCOVXvPI9sBgybspCEyi659wz4I",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{mpf.url}}/seller/product/93562",
+							"host": [
+								"{{mpf.url}}"
+							],
+							"path": [
+								"seller",
+								"product",
+								"93562"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

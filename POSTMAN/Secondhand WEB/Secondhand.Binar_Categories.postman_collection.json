@@ -1,0 +1,77 @@
+{
+	"info": {
+		"_postman_id": "26169587-ff46-4b38-bb80-1ca1811c33de",
+		"name": "Secondhand.Binar_Categories",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29805191"
+	},
+	"item": [
+		{
+			"name": "List Categories",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response time is less than 1000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+							"});\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{shw.url}}/categories.json",
+					"host": [
+						"{{shw.url}}"
+					],
+					"path": [
+						"categories.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Categories",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response time is less than 1000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+							"});\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{shw.url}}/categories/5.json",
+					"host": [
+						"{{shw.url}}"
+					],
+					"path": [
+						"categories",
+						"5.json"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

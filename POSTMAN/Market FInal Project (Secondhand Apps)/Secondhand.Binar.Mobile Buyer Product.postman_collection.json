@@ -1,0 +1,112 @@
+{
+	"info": {
+		"_postman_id": "3895f0c6-3741-4799-9db7-29a55aa3383c",
+		"name": "Secondhand.Binar.Mobile Buyer Product",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29805191"
+	},
+	"item": [
+		{
+			"name": "Buyer Product",
+			"item": [
+				{
+					"name": "get buyer product",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 1000ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "access_token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiZHVsYXppemRlbWFpdHpAZ21haWwuY29tIiwiaWF0IjoxNjk1ODI2MjUwfQ.1cJAqddB_DNduZvd-2iZJptOR-Ka3GkATrKiSqes32U",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{mpf.url}}/buyer/product?status=sold&category_id=5&search&page&per_page",
+							"host": [
+								"{{mpf.url}}"
+							],
+							"path": [
+								"buyer",
+								"product"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "sold"
+								},
+								{
+									"key": "category_id",
+									"value": "5"
+								},
+								{
+									"key": "search",
+									"value": null
+								},
+								{
+									"key": "page",
+									"value": null
+								},
+								{
+									"key": "per_page",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get buyer product by id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 1000ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{mpf.url}}/buyer/product/52",
+							"host": [
+								"{{mpf.url}}"
+							],
+							"path": [
+								"buyer",
+								"product",
+								"52"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

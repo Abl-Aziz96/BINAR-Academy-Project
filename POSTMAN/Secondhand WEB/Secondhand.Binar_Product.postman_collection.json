@@ -1,0 +1,293 @@
+{
+	"info": {
+		"_postman_id": "ad961889-9c29-4ad1-95bc-3c7c96dc1460",
+		"name": "Secondhand.Binar_Product",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29805191"
+	},
+	"item": [
+		{
+			"name": "Create Product",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response time is less than 1000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+							"});\r",
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3NTQzNiIsInNjcCI6InVzZXIiLCJhdWQiOm51bGwsImlhdCI6MTY5NTY0MTc5MywiZXhwIjoxNjk2ODUxMzkzLCJqdGkiOiJhOGYwMmFhNS1mMzIwLTRjZDktOTZiNy1hZTJkMGFiODRkNDIifQ.PNOxfNJfVHWk80HNBl8QTsLPLJyT_WTxWuYVyVESWOY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"product\": {\r\n    \"name\": \"Monyet Ajaib v2\",\r\n    \"price\": 166000,\r\n    \"description\": \"teman kerang ajaib dan monyet ajaib\",\r\n    \"category_id\": \"5\",\r\n    \"images\": \"C:\\Users\\AZIS\\Downloads\\istockphoto-953632528-1024x1024.jpg\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shw.url}}/products.json",
+					"host": [
+						"{{shw.url}}"
+					],
+					"path": [
+						"products.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Product",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response time is less than 1000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+							"});\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3NTQzNiIsInNjcCI6InVzZXIiLCJhdWQiOm51bGwsImlhdCI6MTY5NTY0MTc5MywiZXhwIjoxNjk2ODUxMzkzLCJqdGkiOiJhOGYwMmFhNS1mMzIwLTRjZDktOTZiNy1hZTJkMGFiODRkNDIifQ.PNOxfNJfVHWk80HNBl8QTsLPLJyT_WTxWuYVyVESWOY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shw.url}}/products.json?page=1&category_id=5&user_id=75422",
+					"host": [
+						"{{shw.url}}"
+					],
+					"path": [
+						"products.json"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "category_id",
+							"value": "5"
+						},
+						{
+							"key": "user_id",
+							"value": "75422"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Product",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response time is less than 1000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+							"});\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3NTQzNiIsInNjcCI6InVzZXIiLCJhdWQiOm51bGwsImlhdCI6MTY5NTY0MTc5MywiZXhwIjoxNjk2ODUxMzkzLCJqdGkiOiJhOGYwMmFhNS1mMzIwLTRjZDktOTZiNy1hZTJkMGFiODRkNDIifQ.PNOxfNJfVHWk80HNBl8QTsLPLJyT_WTxWuYVyVESWOY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shw.url}}/products/38680.json",
+					"host": [
+						"{{shw.url}}"
+					],
+					"path": [
+						"products",
+						"38680.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Product",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response time is less than 1000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+							"});\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3NTQzNiIsInNjcCI6InVzZXIiLCJhdWQiOm51bGwsImlhdCI6MTY5NTY0MTc5MywiZXhwIjoxNjk2ODUxMzkzLCJqdGkiOiJhOGYwMmFhNS1mMzIwLTRjZDktOTZiNy1hZTJkMGFiODRkNDIifQ.PNOxfNJfVHWk80HNBl8QTsLPLJyT_WTxWuYVyVESWOY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"product\": {\r\n    \"name\": \"Monyet Ajaib v3.4.21\",\r\n    \"price\": 166660,\r\n    \"description\": \"teman kerang ajaib dan monyet ajaib edited\",\r\n    \"category_id\": \"5\",\r\n    \"images\": \"C:\\Users\\AZIS\\Downloads\\istockphoto-953632528-1024x1024.jpg\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shw.url}}/products/39198.json",
+					"host": [
+						"{{shw.url}}"
+					],
+					"path": [
+						"products",
+						"39198.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response time is less than 1000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+							"});\r",
+							"pm.test(\"Status code is 204\", function () {\r",
+							"    pm.response.to.have.status(204);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3NTQzNiIsInNjcCI6InVzZXIiLCJhdWQiOm51bGwsImlhdCI6MTY5NTY0MTc5MywiZXhwIjoxNjk2ODUxMzkzLCJqdGkiOiJhOGYwMmFhNS1mMzIwLTRjZDktOTZiNy1hZTJkMGFiODRkNDIifQ.PNOxfNJfVHWk80HNBl8QTsLPLJyT_WTxWuYVyVESWOY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shw.url}}/products/39203.json",
+					"host": [
+						"{{shw.url}}"
+					],
+					"path": [
+						"products",
+						"39203.json"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
